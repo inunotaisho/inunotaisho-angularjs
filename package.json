@@ -1,0 +1,87 @@
+{
+  "name": "inunotaisho26.github.io",
+  "version": "0.1.0",
+  "description": "This is the packagejson for Ethan Fairweather's professional website version 2. This is also MEAN stack in nature. Will probably be written in Angular 2 or JS will be the fallback if need be.",
+  "main": "lib/app.js",
+  "devDependencies": {
+    "nodemon": "latest",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "browserify": "^14.3.0",
+    "cluster": "^0.7.7",
+    "concurrently": "^3.4.0",
+    "connect-redis": "^3.2.0",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "jspm": "^0.16.53",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "lodash": "^4.17.4",
+    "minifyify": "^7.3.5",
+    "mkdirp": "^0.5.1",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "pg": "^6.1.5",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.4",
+    "stringify": "^5.1.0"
+  },
+  "scripts": {
+    "babel": "babel -o src/app/main.js > src/app/app.js",
+    "browserify": "browserify src/app/app.js -d -t stringify -o src/dist/app.js -v -p [minifyify --no-map]",
+    "bundle": "mkdirp src/dist && concurrently -r -k \"npm run babel\" \"npm run browserify \" \" npm run less\"",
+    "clean": "rimraf app/**/*.css app/src/**/*.js app/dist/*",
+    "clean:dist": "rimraf app/dist/*",
+    "postinstall": "jspm install",
+    "less": "mkdirp public/dist && lessc ./public/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
+    "dev": "NODE_ENV=development nodemon ./lib/app.js",
+    "prestart": "npm run less",
+    "start": "nodemon ./lib/app.js",
+    "watch": "babel && concurrently -r -k \"npm run watch:bundle\" \"npm run watch:less\"",
+    "watch:bundle": "mkdirp app/dist && watchify public/lib/main.js -d -t stringify -o src/dist/app.js -v",
+    "watch:less": "nodemon -q -w app -e less --exec npm run less"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inunotaisho26/inunotaisho26.github.com.git"
+  },
+  "keywords": [
+    "example",
+    "fullstack",
+    "postgres",
+    "inunotaisho26",
+    "犬の大将",
+    "晴天イタン"
+  ],
+  "author": "Ethan Burrow Fairweather",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inunotaisho26/inunotaisho26.github.com/issues"
+  },
+  "homepage": "https://github.com/inunotaisho26/inunotaisho26.github.com#readme",
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.6.4",
+      "angular-resource": "github:angular/bower-angular-resource@^1.6.4",
+      "angular-route": "github:angular/bower-angular-route@^1.6.4",
+      "bootstrap": "github:twbs/bootstrap@3.3.7",
+      "font-awesome": "npm:font-awesome@^4.7.0",
+      "jquery": "npm:jquery@^3.2.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

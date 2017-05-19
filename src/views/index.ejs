@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>犬の大将 - Ethan Fairweather - 晴天エタン</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="keywords" content="HTML,CSS,JavaScript,inunotaisho26,covalence,betamore,Node,NodeJS,Express,ExpressJS,Angular,AngularJS,Typescript">
+        <meta name="author" content="Ethan Fairweather">
+        <meta name="viewport" content="initial-scale=1 width=device-width">
+        <link rel="stylesheet" type="text/css" href="dist/app.css">
+        <link rel="icon" href="/inu.ico">
+        <base href="/">
+        <script src="/jspm_packages/system.js"></script>
+        <script src="/config.js"></script>
+        <script>
+            System.import('angular-route').then(function(){
+                System.import('lib/main.js');
+            }).catch(console.error.bind(console));
+        </script>
+    </head>
+    <body>
+        <ng-view></ng-view>
+    </body>
+</html>
