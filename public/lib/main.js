@@ -11,8 +11,9 @@ import blog from '../src/views/blog/blog.vc';
 import login from '../src/views/login/login.vc';
 import write from '../src/views/write/write.vc';
 import contact from '../src/views/contact/contact.vc';
+import reg from '../src/views/reg/reg.vc';
 
-angular.module('myApp', ['ngRoute', 'ngResource','navbar','home','education','projects','blog','login','write','contact'])
+angular.module('myApp', ['ngRoute', 'ngResource','navbar','home','education','projects','blog','login','write','contact','reg'])
 .config(($routeProvider, $locationProvider) => {
     $routeProvider
     .when('/', {
@@ -48,6 +49,11 @@ angular.module('myApp', ['ngRoute', 'ngResource','navbar','home','education','pr
         templateUrl:'../../src/views/contact/contact.vc.html',
         controller: 'contactCtrl',
         controllerUrl: '../../src/views/contact/contact.vc.js'
+    })
+    .when('/registration',{
+        templateUrl:'../../src/views/reg/reg.vc.html',
+        controller: 'regCtrl',
+        controllerUrl:'../../src/views/reg/reg.vc.js'
     })
     .otherwise({
         redirectTo: '/'

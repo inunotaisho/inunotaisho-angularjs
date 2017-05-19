@@ -16,9 +16,9 @@
             <li><a class="mobile" href="/#!/education">Education</a></li>
             <li><a class="mobile" href="/#!/projects">Projects</a></li>
             <li><a class="mobile" href="/#!/blog">Blog</a></li>
-            <li ng-show="isUserLoggedIn"><a class="mobile" href="/#!/login">Login</a></li>
-            <li ng-show="!isUserLoggedIn"><a class="mobile" href="/#!/write">Write</a></li>
-            <li ng-show="!isUserLoggedIn"><a class="mobile" href="/#!/">Logout</a></li>
+            <li ng-show="!isUserLoggedIn()"><a class="mobile" href="/#!/login">Login</a></li>
+            <li ng-show="isUserLoggedIn()"><a class="mobile" href="/#!/write">Write</a></li>
+            <li ng-show="isUserLoggedIn()"><a class="mobile" href="/#!/" ng-click="logout()">Logout</a></li>
             <li><a class="mobile" href="/#!/contact">Contact</a></li>
         </ul>
     </div>      
