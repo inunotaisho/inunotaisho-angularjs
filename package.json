@@ -43,7 +43,7 @@
     "less": "mkdirp public/dist && lessc ./public/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
     "postinstall": "jspm install",
     "prestart": "npm run less",
-    "start": "nodemon ./lib/app.js"
+    "start": "node ./lib/app.js"
   },
   "repository": {
     "type": "git",
