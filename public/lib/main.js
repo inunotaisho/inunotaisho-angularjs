@@ -38,7 +38,8 @@ angular.module('myApp', ['ngRoute', 'ngResource','navbar','home','education','pr
     .when('/login', {
         templateUrl:'../../src/views/login/login.vc.html',
         controller:'loginCtrl',
-        controllerUrl:'../../src/views/login/login.vc.js'
+        controllerUrl:'../../src/views/login/login.vc.js',
+        isLogin: true
     })
     .when('/write', {
         templateUrl:'../../src/views/write/write.vc.html',
