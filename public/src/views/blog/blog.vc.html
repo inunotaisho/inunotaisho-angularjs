@@ -13,21 +13,19 @@
         <div class="">
             <div class="">
                 <div ng-repeat="item in items">
-                    <a href="/#/blog/{{item.objectId}}">
-                        <h3>
-                            {{item.title}}
-                        </h3>
+                    <a href="/#!/blog/{{item.objectId}}">
+                        <p>{{item.title}}</p>
                     </a>
                     <p>Posted by <b>{{item.author}}</b> on {{item.createdAt | date}}</p>
                 </div>
                 <hr>
-                <!-- Page Turner -->
-                <ul class="pager">
-                    <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
-                </ul>
             </div>
         </div>
+        <!-- Page Turner -->
+        <ul class="pager">
+            <li class="next">
+                <a href="#">Older Posts &rarr;</a>
+            </li>
+        </ul>
     </div>
-</div>>
+</div>
