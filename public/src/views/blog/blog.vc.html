@@ -8,7 +8,27 @@
                 </div>
             </div>
         </div>
-        <div>
+    </div>
+    <div class="container">
+        <div ng-repeat="data in items">
+            <div class="">
+                <p>
+                    Posted by {{data.user.username}}
+                </p>
+            </div>
+            <div class="">
+                <a href="/#/blog/{{item.objectId}}">
+                    <p>{{data.blog.title}}</p>
+                </a>
+                <p>{{data.blog.type}} on {{data.blog.createdAt | date}}</p>
+            </div>
         </div>
+        <hr>
+        <!-- Page Turner -->
+        <ul class="pager">
+            <li class="next">
+                <a href="#">Older Posts &rarr;</a>
+            </li>
+        </ul>
     </div>
 </div>

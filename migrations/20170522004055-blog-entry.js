@@ -2,7 +2,10 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.createTable('Users',{
+
+    return queryInterface.createTable('Blog',
+
+    {
       id:{
         allowNull: false,
         autoIncrement: true,
@@ -13,15 +16,18 @@ module.exports = {
         type:Sequelize.STRING,
         unique:true
       },
-      password: {
-        type: Sequelize.STRING
-      },
-      email: {
+
+      image:{
         type:Sequelize.STRING,
         unique:true
       },
-      emailPassword: {
-        type:Sequelize.STRING
+      subject:{
+        type:Sequelize.STRING,
+        unique: false
+      },
+      post:{
+        type:Sequelize.STRING,
+        unique:false
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +41,8 @@ module.exports = {
   },
 
   down: function (queryInterface, Sequelize) {
-    return queryInterface.dropTable('Users');
+
+    return queryInterface.createTable('Blog')
+
   }
 };

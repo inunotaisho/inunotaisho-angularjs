@@ -21,19 +21,3 @@ angular.module('login', ['authModule'])
         }
     
 });
-
-/*angular.module('login').run(function ($location, $rootScope) {
-    console.log('here');
-    $rootScope.$on('$routeChangeStart', function (event, nextRoute, currentRoute) {
-        //$location.path('/login').replace();
-    //if login required and you're logged out, capture the current path
-        /*if (nextRoute.loginRequired && Account.loggedOut()) {
-          postLogInRoute = $location.path();
-          $location.path('/login').replace();
-        } else if (postLogInRoute && Account.loggedIn()) {
-    //once logged in, redirect to the last route and reset it
-          $location.path(postLogInRoute).replace();
-          postLogInRoute = null;
-        }
-    });
-});*/
