@@ -2,7 +2,7 @@
 
 var bcrypt = require('bcrypt');
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define('User', {
     username: {
       type: DataTypes.STRING,
@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING,
-      set: function(val){
+      set: function (val) {
         this.setDataValue('password', bcrypt.hashSync(val, 8));
       },
       validate: {
@@ -24,22 +24,31 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true,
         notEmpty: true
       }
+    },
+    emailPassword: {
+      type: DataTypes.STRING,
+      set: function (val) {
+        this.setDataValue('emailPassword', bcrypt.hashSync(val, 8))
+      },
+      validate: {
+        notEmpty:true
+      }
     }
   }, {
-    instanceMethods: {
-      isValidPassword: function (password){
-        console.log(password, this.password);
-        return bcrypt.compareSync(password, this.password);
-      }
-    },
-    classMethods: {
-      associate: function (models){
-        
-      }
-    },
-    validate: {
+      instanceMethods: {
+        isValidPassword: function (password) {
+          console.log(password, this.password);
+          return bcrypt.compareSync(password, this.password);
+        }
+      },
+      classMethods: {
+        associate: function (models) {
 
-    }
-  });
+        }
+      },
+      validate: {
+
+      }
+    });
   return User;
 };
