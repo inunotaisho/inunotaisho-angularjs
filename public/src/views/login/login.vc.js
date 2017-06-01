@@ -2,7 +2,7 @@ import angular from 'angular';
 import authModule from '../../authentication';
 
 angular.module('login', ['authModule'])
-.controller('loginCtrl', ($scope, $http, authService) => {
+.controller('loginCtrl', ($scope, $http, $location, authService) => {
         $scope.loginUser = function() {
             $http.post('/users/login', {
                 username: $scope.username,
@@ -11,7 +11,7 @@ angular.module('login', ['authModule'])
                 if(data.status === 200) {
                     console.log(data);
                     authService.setIsLoggedIn(true);
-
+                    $location.path('/#!/');
                 }
             }).catch(error => {
                 console.log(error);

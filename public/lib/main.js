@@ -11,6 +11,7 @@ import write from '../src/views/write/write.vc';
 import contact from '../src/views/contact/contact.vc';
 import reg from '../src/views/reg/reg.vc';
 
+
 angular.module('myApp', ['ngRoute', 'ngResource','navbar','blog','login','profile','write','contact','reg'])
 .config(($routeProvider, $locationProvider) => {
     $routeProvider
@@ -48,11 +49,11 @@ angular.module('myApp', ['ngRoute', 'ngResource','navbar','blog','login','profil
         controller: 'contactCtrl',
         controllerUrl: '../src/views/contact/contact.vc.js'
     })
-    .when('/registration',{
+    /*.when('/registration',{
         templateUrl:'../../src/views/reg/reg.vc.html',
         controller: 'regCtrl',
         controllerUrl:'../../src/views/reg/reg.vc.js'
-    })
+    })*/
     .otherwise({
         redirectTo: '/'
     });

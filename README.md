@@ -1,6 +1,6 @@
 # inunotaisho26
 
-This is the fullstack version of my website which will become `www.ebseiten.com`.
+This is the fullstack version of my website which will become www.ebseiten.com.
 
 Alough not complete, it still runs so long as you have `postegres` and `redis` running with sequelize files migrated
 
