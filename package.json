@@ -20,6 +20,7 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
+    "helmet": "^3.6.1",
     "jspm": "^0.16.53",
     "less": "^2.7.2",
     "less-plugin-clean-css": "^1.5.1",

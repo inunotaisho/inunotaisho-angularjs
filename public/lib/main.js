@@ -37,12 +37,14 @@ angular.module('myApp', ['ngRoute', 'ngResource','navbar','blog','login','profil
     .when('/profile', {
         templateUrl:'../src/views/profile/profile.vc.html',
         controller:'profileCtrl',
-        controllerUrl:'../src/views/profile/profile.vc.js'
+        controllerUrl:'../src/views/profile/profile.vc.js',
+        isLogin: true
     })
     .when('/write', {
         templateUrl:'../src/views/write/write.vc.html',
         controller:'writeCtrl',
-        controllerUrl:'../src/views/write/write.vc.js'
+        controllerUrl:'../src/views/write/write.vc.js',
+        isLogin: true
     })
     .when('/contact', {
         templateUrl:'../src/views/contact/contact.vc.html',
