@@ -1,9 +1,9 @@
 import angular from 'angular';
 
 angular.module('contact', [])
-.controller('contactCtrl', () => {
+.controller('contactCtrl', ($http, $scope) => {
 
-    function contactForm(){
+    /*function contactForm(){
         let contactForm = document.getElementById('inputform');
         contactForm.setAttribute('action', '//formspree.io/' + 'ebfairweather' + '@' + 'gmail' + '.' + 'com');
         let nested = document.createElement('div');
@@ -38,5 +38,14 @@ angular.module('contact', [])
                 }
             };
         };
-    };
+    };*/
+    $scope.user={}
+    $scope.addUser= function(){
+        $http.post('/contact/addUser',{user:$scope.user}).then(res => {
+            if(res.status === 200){
+                console.log($scope.user);
+            }
+        })
+    }
+
 });
