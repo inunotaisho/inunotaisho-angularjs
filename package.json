@@ -28,7 +28,6 @@
     "minifyify": "^7.3.5",
     "mkdirp": "^0.5.1",
     "nodemailer": "^4.0.1",
-    "nodemailer-express-handlebars": "^2.0.0",
     "os": "^0.1.1",
     "path": "^0.12.7",
     "pg": "^6.1.5",

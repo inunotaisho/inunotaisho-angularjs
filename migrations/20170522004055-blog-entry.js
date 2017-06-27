@@ -12,11 +12,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username:{
+      preview:{
         type:Sequelize.STRING,
-        unique:true
+        unique:false
       },
-
       image:{
         type:Sequelize.STRING,
         unique:true
