@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (sequelize, DataTypes) =>{
-    let Blog = sequelize.define('Blog', {
+    const Blog = sequelize.define('Blog', {
         preview: {
             type: DataTypes.STRING
         },
@@ -25,5 +25,6 @@ module.exports = (sequelize, DataTypes) =>{
             allowNull: false,
             type: DataTypes.DATE
         }
-    })
+    });
+    return Blog;
 }

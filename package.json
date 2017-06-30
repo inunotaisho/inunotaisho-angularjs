@@ -45,7 +45,7 @@
     "postinstall": "jspm install",
     "less": "mkdirp public/dist && lessc ./public/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
     "dev": "NODE_ENV=development nodemon ./lib/app.js",
-    "prestart": "npm run less",
+    "prestart": "sequelize db:migrate && npm run less",
     "start": "nodemon ./lib/app.js",
     "watch": "babel && concurrently -r -k \"npm run watch:bundle\" \"npm run watch:less\"",
     "watch:bundle": "mkdirp app/dist && watchify public/lib/main.js -d -t stringify -o src/dist/app.js -v",

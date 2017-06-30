@@ -3,7 +3,7 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
 
-    return queryInterface.createTable('Blog',
+    return queryInterface.createTable('blogs',
 
     {
       id:{
@@ -41,7 +41,7 @@ module.exports = {
 
   down: function (queryInterface, Sequelize) {
 
-    return queryInterface.createTable('Blog')
+    return queryInterface.createTable('blogs')
 
   }
 };

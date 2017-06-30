@@ -10,11 +10,11 @@
                         <form>
                             <div class="form-group">
                                 <label>Topic</label>
-                                <input class="form-control" type="text" name="topic" required>
+                                <input class="form-control" type="text" ng-model="name" name="topic" required>
                                 <label>Post</label>
-                                <textarea class="form-control" name="post" rows="6" required></textarea>
+                                <textarea class="form-control" name="post" ng-model="post" rows="6" required></textarea>
                                 <div class="btnpadding">
-                                    <button class="btn btn-default" type="submit">Submit</button> 
+                                    <button class="btn btn-default" type="submit" ng-click="submitBlog()">Submit</button> 
                                 </div>
                             </div>
                         </form>
