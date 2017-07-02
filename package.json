@@ -12,7 +12,6 @@
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
-    "browserify": "^14.3.0",
     "cluster": "^0.7.7",
     "concurrently": "^3.4.0",
     "connect-redis": "^3.2.0",
@@ -78,6 +77,7 @@
       "angular-resource": "github:angular/bower-angular-resource@^1.6.4",
       "angular-route": "github:angular/bower-angular-route@^1.6.4",
       "bootstrap": "github:twbs/bootstrap@3.3.7",
+      "browserify": "npm:browserify@^14.4.0",
       "font-awesome": "npm:font-awesome@^4.7.0",
       "jquery": "npm:jquery@^3.2.1"
     },

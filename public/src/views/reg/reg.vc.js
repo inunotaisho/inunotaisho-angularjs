@@ -9,6 +9,9 @@ angular.module('reg', [])
             } else {
                 console.log(response);
             }
+        }).catch(err => {
+            console.log(err);
+            console.log('not logging in');
         })
     }
 });

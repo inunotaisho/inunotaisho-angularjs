@@ -20,7 +20,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(function(file) {
-    var model = sequelize.import(path.join(__dirname, file));
+    var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });
 
@@ -33,6 +33,6 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-console.log('alldbs', db)
+//console.log('alldbs', db)
 
 module.exports = db;

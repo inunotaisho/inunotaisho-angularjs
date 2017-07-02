@@ -17,6 +17,8 @@ module.exports = function(sequelize, DataTypes) {
         message:{
             type:DataTypes.STRING
         }
+    }, {
+        tableName: 'contacts'
     })
   return Contact;
 };
