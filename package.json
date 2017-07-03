@@ -43,7 +43,7 @@
     "clean": "rimraf app/**/*.css app/src/**/*.js app/dist/*",
     "clean:dist": "rimraf app/dist/*",
     "postinstall": "jspm install",
-    "less": "mkdirp public/dist && lessc ./public/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
+    "less": "mkdirp public/dist && lessc ./src/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
     "dev": "NODE_ENV=development nodemon ./lib/app.js",
     "prestart": "sequelize db:migrate && npm run less",
     "start": "nodemon ./lib/app.js",
