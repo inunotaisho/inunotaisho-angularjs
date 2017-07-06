@@ -4,10 +4,15 @@
   "description": "This is the packagejson for Ethan Fairweather's professional website version 2. This is also MEAN stack in nature. Will probably be written in Angular 2 or JS will be the fallback if need be.",
   "main": "lib/app.js",
   "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
     "nodemon": "latest",
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "angular": "^1.6.5",
+    "angular-resource": "^1.6.5",
+    "angular-route": "^1.6.5",
     "babel-cli": "^6.24.1",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
@@ -19,7 +24,9 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
+    "font-awesome": "^4.7.0",
     "helmet": "^3.6.1",
+    "jquery": "^3.2.1",
     "jspm": "^0.16.53",
     "less": "^2.7.2",
     "less-plugin-clean-css": "^1.5.1",
@@ -41,7 +48,6 @@
     "bundle": "mkdirp src/dist && concurrently -r -k \"npm run babel\" \"npm run browserify \" \" npm run less\"",
     "clean": "rimraf app/**/*.css app/src/**/*.js app/dist/*",
     "clean:dist": "rimraf app/dist/*",
-    "postinstall": "jspm install",
     "less": "mkdirp public/dist && lessc ./src/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
     "dev": "NODE_ENV=development nodemon ./lib/app.js",
     "prestart": "sequelize db:migrate && npm run less",
@@ -67,24 +73,5 @@
   "bugs": {
     "url": "https://github.com/inunotaisho26/inunotaisho26.github.com/issues"
   },
-  "homepage": "https://github.com/inunotaisho26/inunotaisho26.github.com#readme",
-  "jspm": {
-    "directories": {
-      "baseURL": "public"
-    },
-    "dependencies": {
-      "angular": "github:angular/bower-angular@^1.6.4",
-      "angular-resource": "github:angular/bower-angular-resource@^1.6.4",
-      "angular-route": "github:angular/bower-angular-route@^1.6.4",
-      "bootstrap": "github:twbs/bootstrap@3.3.7",
-      "browserify": "npm:browserify@^14.4.0",
-      "font-awesome": "npm:font-awesome@^4.7.0",
-      "jquery": "npm:jquery@^3.2.1"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
-    }
-  }
+  "homepage": "https://github.com/inunotaisho26/inunotaisho26.github.com#readme"
 }
