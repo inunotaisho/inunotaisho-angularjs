@@ -17,6 +17,10 @@ module.exports = {
             __DEV__: true
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: 'jquery'
+        }),
         new webpack.NoErrorsPlugin()
     ],
     module:{
