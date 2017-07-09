@@ -1,5 +1,5 @@
 import angular from 'angular';
-import authModule from '../../authentication';
+import authModule from '../authentication';
 
 angular.module('login', ['authModule'])
 .controller('loginCtrl', ($scope, $http, $location, authService) => {

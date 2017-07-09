@@ -1,5 +1,4 @@
-import $ from 'jquery';
-import bootstrap from 'bootstrap';
+import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import angular from 'angular';
 import ngResource from 'angular-resource';
 import ngRoute from 'angular-route';
@@ -10,49 +9,58 @@ import profile from '../profile/profile.vc.js';
 import write from '../write/write.vc';
 import contact from '../contact/contact.vc';
 import reg from '../reg/reg.vc';
+import '../authentication.js';
+import homeTemplate from '../home/home.vc.html';
+import educationTemplate from '../education/ed.vc.html';
+import projectTemplate from '../projects/projects.vc.html';
+import blogTemplate from '../blog/blog.vc.html';
+import loginTemplate from '../login/login.vc.html';
+import profileTemplate from '../profile/profile.vc.html';
+import writeTemplate from '../write/write.vc.html';
+import contactTemplate from '../contact/contact.vc.html';
+import regTemplate from '../reg/reg.vc.html';
 
-
- var app = angular.module('myApp', ['ngRoute', 'ngResource','navbar','blog','login','profile','write','contact','reg'])
+ angular.module('myApp', ['ngRoute', 'ngResource','navbar','blog','login','profile','write','contact','reg','authModule'])
     .config(($routeProvider, $locationProvider) => {
         $routeProvider
         .when('/', {
-            templateUrl: '../home/home.vc.html'
+            template: homeTemplate
         })
         .when('/education', {
-            templateUrl: '../education/ed.vc.html'
+            template: educationTemplate 
         }).when('/projects', {
-            templateUrl: '../projects/projects.vc.html'
+            template: projectTemplate
         })
         .when('/blog', {
-            templateUrl:'../blog/blog.vc.html',
+            template: blogTemplate,
             controller: 'blogCtrl',
             controllerUrl: '../blog/blog.vc.js'
         })
         .when('/login', {
-            templateUrl:'../login/login.vc.html',
+            template: loginTemplate,
             controller:'loginCtrl',
             controllerUrl:'../login/login.vc.js',
             isLogin: true
         })
         .when('/profile', {
-            templateUrl:'../profile/profile.vc.html',
+            template: profileTemplate,
             controller:'profileCtrl',
             controllerUrl:'../profile/profile.vc.js',
             isLogin: true
         })
         .when('/write', {
-            templateUrl:'../write/write.vc.html',
+            template: writeTemplate,
             controller:'writeCtrl',
             controllerUrl:'../write/write.vc.js',
             isLogin: true
         })
         .when('/contact', {
-            templateUrl:'../contact/contact.vc.html',
+            template: contactTemplate,
             controller: 'contactCtrl',
             controllerUrl: '../contact/contact.vc.js'
         })
         .when('/registration',{
-            templateUrl:'../reg/reg.vc.html',
+            template: regTemplate,
             controller: 'regCtrl',
             controllerUrl:'../reg/reg.vc.js'
         })
