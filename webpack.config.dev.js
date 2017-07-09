@@ -21,7 +21,7 @@ module.exports = {
             $: "jquery",
             jQuery: 'jquery'
         }),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     module:{
         rules: [{
