@@ -1,4 +1,5 @@
-import '../../../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import $ from 'jquery';
+import bootstrap from 'bootstrap';
 import angular from 'angular';
 import ngResource from 'angular-resource';
 import ngRoute from 'angular-route';
