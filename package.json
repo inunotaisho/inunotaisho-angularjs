@@ -56,7 +56,7 @@
     "dev": "NODE_ENV=development nodemon ./lib/app.js",
     "prestart": "sequelize db:migrate && npm run bundle",
     "start": "nodemon ./lib/app.js",
-    "pack":"webpack --config webpack.config.dev.js"
+    "pack": "webpack --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
