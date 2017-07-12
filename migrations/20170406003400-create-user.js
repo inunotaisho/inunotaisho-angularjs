@@ -2,7 +2,7 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.createTable('users',{
+    return queryInterface.createTable('Users',{
       id:{
         allowNull: false,
         autoIncrement: true,
@@ -16,18 +16,20 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      firstName:{
-        type:Sequelize.STRING,
-      },
-      lastName:{
-        type:Sequelize.STRING,
-      },
       email: {
         type:Sequelize.STRING,
         unique:true
       },
       emailPassword: {
         type:Sequelize.STRING
+      },
+      userImage:{
+        type:Sequelize.STRING,
+        unique:true
+      },
+      profileImage:{
+        type:Sequelize.STRING,
+        unique:true
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +43,6 @@ module.exports = {
   },
 
   down: function (queryInterface, Sequelize) {
-    return queryInterface.dropTable('users');
+    return queryInterface.dropTable('Users');
   }
 };

@@ -5,10 +5,6 @@ module.exports = (sequelize, DataTypes) =>{
         preview: {
             type: DataTypes.STRING
         },
-        image: {
-            type: DataTypes.STRING,
-            unique:true
-        },
         subject: {
             type: DataTypes.STRING,
             unique: false
