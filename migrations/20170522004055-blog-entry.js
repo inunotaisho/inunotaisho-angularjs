@@ -3,7 +3,7 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
 
-    return queryInterface.createTable('blogs',
+    return queryInterface.createTable('Blog',
 
     {
       id:{
@@ -12,11 +12,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      preview:{
-        type:Sequelize.STRING,
-        unique:false
-      },
-      image:{
+      username:{
         type:Sequelize.STRING,
         unique:true
       },
@@ -41,7 +37,7 @@ module.exports = {
 
   down: function (queryInterface, Sequelize) {
 
-    return queryInterface.createTable('blogs')
+    return queryInterface.createTable('Blog')
 
   }
 };

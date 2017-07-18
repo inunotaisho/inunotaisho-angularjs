@@ -18,12 +18,6 @@ module.exports = function (sequelize, DataTypes) {
         notEmpty: true
       }
     },
-    firstName: {
-      type: DataTypes.STRING,
-    },
-    lastName: {
-      type: DataTypes.STRING,
-    },
     email: {
       type: DataTypes.STRING,
       validate: {
@@ -37,12 +31,18 @@ module.exports = function (sequelize, DataTypes) {
         this.setDataValue('emailPassword', bcrypt.hashSync(val, 8))
       },
       validate: {
-        notEmpty: true
+        notEmpty:true
       }
-    }
-  },
-    {
-      tableName: 'users',
+    },
+    userImage:{
+        type:DataTypes.STRING,
+        unique:true
+      },
+      profileImage:{
+        type:DataTypes.STRING,
+        unique: true
+      },
+  }, {
       instanceMethods: {
         isValidPassword: function (password) {
           console.log(password, this.password);
