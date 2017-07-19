@@ -23,14 +23,6 @@ module.exports = {
       emailPassword: {
         type:Sequelize.STRING
       },
-      userImage:{
-        type:Sequelize.STRING,
-        unique:true
-      },
-      profileImage:{
-        type:Sequelize.STRING,
-        unique:true
-      },
       createdAt: {
         allowNull: false,
         type:Sequelize.DATE

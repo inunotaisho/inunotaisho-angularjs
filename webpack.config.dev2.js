@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
+    watch: true,
     devtool: 'source-map',
     entry: [
         'webpack-hot-middleware/client?reload=true',

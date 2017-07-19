@@ -33,15 +33,7 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         notEmpty:true
       }
-    },
-    userImage:{
-        type:DataTypes.STRING,
-        unique:true
-      },
-      profileImage:{
-        type:DataTypes.STRING,
-        unique: true
-      },
+    }
   }, {
       instanceMethods: {
         isValidPassword: function (password) {
