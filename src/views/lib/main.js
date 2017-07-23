@@ -13,7 +13,7 @@ import reg from '../reg/reg.vc';
 import '../authentication.js';
 import homeTemplate from '../home/home.vc.html';
 import educationTemplate from '../education/ed.vc.html';
-import projectTemplate from '../projects/projects.vc.html';
+import portfolioTemplate from '../portfolio/portfolio.vc.html';
 import blogTemplate from '../blog/blog.vc.html';
 import loginTemplate from '../login/login.vc.html';
 import profileTemplate from '../profile/profile.vc.html';
@@ -29,8 +29,8 @@ import regTemplate from '../reg/reg.vc.html';
         })
         .when('/education', {
             template: educationTemplate 
-        }).when('/projects', {
-            template: projectTemplate
+        }).when('/portfolio', {
+            template: portfolioTemplate
         })
         .when('/blog', {
             template: blogTemplate,
