@@ -1,4 +1,4 @@
-# inunotaisho26
+# InuNoTaisho: AngularJS
 
 This is the fullstack version of my website which will become www.ebseiten.com.
 
