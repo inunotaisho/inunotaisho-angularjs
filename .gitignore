@@ -1,6 +1,18 @@
 node_modules
-jspm_packages
 coverage
 npm-debug.log
 .env
 dump.rdb
+
+# OSX Folder Attributes
+.DS_Store
+
+# Map files
+*.map
+
+# Distribution files
+public/dist/app.css
+public/dist/bundle.js
+public/dist/bundle.js.map
+public/fonts
+public/images
