@@ -3,8 +3,9 @@ import bootstrap from 'bootstrap';
 import angular from 'angular';
 import ngResource from 'angular-resource';
 import ngRoute from 'angular-route';
-import navbar from '../navbar/navbar.dir.js';
 import blog from '../blog/blog.vc';
+import errors from '../error/error.vc';
+import navbar from '../navbar/navbar.dir.js';
 import login from '../login/login.vc';
 import profile from '../profile/profile.vc.js';
 import write from '../write/write.vc';
@@ -13,6 +14,7 @@ import reg from '../reg/reg.vc';
 import '../authentication.js';
 import homeTemplate from '../home/home.vc.html';
 import educationTemplate from '../education/ed.vc.html';
+import errorTemplate from '../error/error.vc.html';
 import portfolioTemplate from '../portfolio/portfolio.vc.html';
 import blogTemplate from '../blog/blog.vc.html';
 import loginTemplate from '../login/login.vc.html';
@@ -21,7 +23,7 @@ import writeTemplate from '../write/write.vc.html';
 import contactTemplate from '../contact/contact.vc.html';
 import regTemplate from '../reg/reg.vc.html';
 
- angular.module('myApp', ['ngRoute', 'ngResource','navbar','blog','login','profile','write','contact','reg','authModule'])
+ angular.module('myApp', ['ngRoute', 'ngResource','navbar','errors','blog','login','profile','write','contact','reg','authModule'])
     .config(($routeProvider, $locationProvider) => {
         $routeProvider
         .when('/', {
@@ -64,6 +66,11 @@ import regTemplate from '../reg/reg.vc.html';
             template: regTemplate,
             controller: 'regCtrl',
             controllerUrl:'../reg/reg.vc.js'
+        })
+        .when('/error',{
+            template: errorTemplate,
+            controller: 'errorCtrl',
+            controllerUrl: '../error/error.vc.js'
         })
         .otherwise({
             redirectTo: '/'
