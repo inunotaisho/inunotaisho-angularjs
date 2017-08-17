@@ -5,10 +5,12 @@ angular.module('authModule', [])
     let isLoggedIn = false;
 
     this.setIsLoggedIn = function(value) {
+        localStorage.setItem('loggedIn', value ? '1' : '0');
         isLoggedIn = value;
     } 
 
     this.getIsLoggedIn = function() {
-        return isLoggedIn;
+        let loggedIn = localStorage.getItem('loggedIn');
+        return loggedIn && loggedIn == '1';
     }
 });
