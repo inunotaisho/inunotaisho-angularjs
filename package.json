@@ -1,5 +1,5 @@
 {
-  "name": "inunotaisho26.github.io",
+  "name": "inunotaisho-angularjs",
   "version": "0.2.0",
   "description": "This is the packagejson for Ethan Fairweather's professional website version 2. This is also MEAN stack in nature. Will probably be written in Angular 2 or JS will be the fallback if need be.",
   "main": "lib/app.js",
@@ -59,7 +59,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inunotaisho26/inunotaisho26.github.com.git"
+    "url": "git+https://github.com/inunotaisho26/inunotaisho-angularjs.git"
   },
   "keywords": [
     "example",
@@ -72,7 +72,7 @@
   "author": "Ethan Burrow Fairweather",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inunotaisho26/inunotaisho26.github.com/issues"
+    "url": "https://github.com/inunotaisho26/inunotaisho-angularjs/issues"
   },
-  "homepage": "https://github.com/inunotaisho26/inunotaisho26.github.com#readme"
+  "homepage": "https://github.com/inunotaisho26/inunotaisho-angularjs#readme"
 }
