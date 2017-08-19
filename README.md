@@ -1,6 +1,6 @@
 # InuNoTaisho: AngularJS
 
-This is the AngularJS fullstack version of my website, ngjs.ebseiten.com.
+This is the AngularJS fullstack version of my website, [ngjs.ebseiten.com](ngjs.ebseiten.com).
 
 Its about 92% of the way complete. It runs so long as you have `postegres` and `redis` running with sequelize files migrated
 
