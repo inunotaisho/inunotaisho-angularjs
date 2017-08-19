@@ -1,8 +1,8 @@
 # InuNoTaisho: AngularJS
 
-This is the fullstack version of my website which will become www.ebseiten.com.
+This is the AngularJS fullstack version of my website, ngjs.ebseiten.com.
 
-Alough not complete, it still runs so long as you have `postegres` and `redis` running with sequelize files migrated
+Its about 92% of the way complete. It runs so long as you have `postegres` and `redis` running with sequelize files migrated
 
 First clone this repo. Before taking futher steps, make sure you have `nodejs` and `npm` installed. Then run `npm install` to install all required `node_modules`.
 
@@ -24,7 +24,7 @@ Navigate to `localhost:8080` and you should be there.
 - https://redis.io/
 - https://expressjs.com/
 - https://webpack.js.org/configuration/
-- https://code.angularjs.org/1.6.4/docs/guide
+- https://code.angularjs.org/1.6.5/docs/guide
 - http://lesscss.org/
 
 **Supportting Software Documentation**
