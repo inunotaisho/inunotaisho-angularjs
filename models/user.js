@@ -24,15 +24,6 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true,
         notEmpty: true
       }
-    },
-    emailPassword: {
-      type: DataTypes.STRING,
-      set: function (val) {
-        this.setDataValue('emailPassword', bcrypt.hashSync(val, 8))
-      },
-      validate: {
-        notEmpty:true
-      }
     }
   });
 

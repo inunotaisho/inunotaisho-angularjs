@@ -20,9 +20,6 @@ module.exports = {
         type:Sequelize.STRING,
         unique:true
       },
-      emailPassword: {
-        type:Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type:Sequelize.DATE

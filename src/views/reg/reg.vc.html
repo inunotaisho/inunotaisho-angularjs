@@ -23,11 +23,6 @@
                 <div ng-show="registration.email.$error.email">
                     <p>Must be an email address.</p>
                 </div>
-                <label for="emailPassword">Email Password</label>
-                <input class="form-control" type="password" name="emailPassword" ng-model="user.emailPassword" required="required" />
-                <div ng-show="registration.emailPassword.$error.emailPassword">
-                    <p>Must be an email password.</p>
-                </div>
             </div>
             <div class="form-group" ng-class="{ 'has-error': registration.password.$dirty &amp;&amp; registration.password.$invalid }">
                 <label for="password">Password</label>
