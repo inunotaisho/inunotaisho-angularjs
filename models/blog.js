@@ -1,28 +1,15 @@
 'use strict'
+const mongoose = require("mongoose");
 
-module.exports = (sequelize, DataTypes) =>{
-    const Blog = sequelize.define('Blog', {
-        preview: {
-            type: DataTypes.STRING
-        },
-        subject: {
-            type: DataTypes.STRING,
-            unique: false
-        },
-        post: {
-            type: DataTypes.STRING,
-            unique: false
-        },
-        createdAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            allowNull: false,
-            type: DataTypes.DATE
-        }
-    }, {
-        tableName: 'blogs'
-    });
-    return Blog;
-}
+const Schema = mongoose.Schema;
+
+const BlogSchema = new Schema({
+    author: String,
+    preview: String,
+    subject: String,
+    post: String
+});
+
+const BlogModel = mongoose.model('Blog', BlogSchema);
+
+module.exports = BlogModel;

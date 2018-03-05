@@ -1,24 +1,16 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
-  var Contact = sequelize.define('Contact', {
-        firstName:{
-            type:DataTypes.STRING,
-        },
-        lastName:{
-            type:DataTypes.STRING,
-        },
-        email:{
-            type:DataTypes.STRING,
-            unique: true
-        },
-        subject:{
-            type:DataTypes.STRING
-        },
-        message:{
-            type:DataTypes.STRING
-        }
-    }, {
-        tableName: 'contacts'
-    })
-  return Contact;
-};
+'use strict'
+const mongoose = require("mongoose");
+
+const Schema = mongoose.Schema;
+
+const ContactSchema = new Schema({
+    firstName: String,
+    lastName: String,
+    email: String,
+    subject: String,
+    message: String
+});
+
+const ContactModel = mongoose.model('Contact', ContactSchema);
+
+module.exports = ContactModel;

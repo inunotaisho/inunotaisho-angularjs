@@ -1,20 +1,11 @@
 {
   "development": {
-    "username": "postgres",
-    "password": null,
-    "database": "inunotaisho",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "mongodb://localhost:27017/inunotaisho"
   },
   "test": {
-    "username": "postgres",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
-    "logging": false
+    "use_env_variable": "DATABASE_URL"
   }
 }

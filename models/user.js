@@ -1,34 +1,43 @@
-'use strict';
+const mongoose = require("mongoose"),
+       bcrypt = require('bcrypt');
 
-var bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
-module.exports = function (sequelize, DataTypes) {
-  const User = sequelize.define('User', {
-    username: {
-      type: DataTypes.STRING,
-      unique: true
-    },
-    password: {
-      type: DataTypes.STRING,
-      set: function (val) {
-        this.setDataValue('password', bcrypt.hashSync(val, 8));
-      },
-      validate: {
-        notIn: [['password']],
-        notEmpty: true
-      }
-    },
-    email: {
-      type: DataTypes.STRING,
-      validate: {
-        isEmail: true,
-        notEmpty: true
-      }
+const UserSchema = new Schema({
+    username: String,
+    password: String,
+    email:String,
+    firstName:String,
+    lastName:String
+});
+
+UserSchema.pre('save', function (next) {
+  const user = this;
+  bcrypt.genSalt(8, function (err, salt) {
+    if (err) {
+      return next();
     }
-  });
 
-  User.prototype.isValidPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
-  }
-  return User;
-};
+    bcrypt.hash(user.password, salt, function(err, hash) {
+      if (err) {
+        return next(err);
+      }
+      user.password = hash;
+      next();
+    })
+  })
+});
+
+UserSchema.methods.comparePassword = function (password, callback) {
+  bcrypt.compare(password, this.password, (err, isMatch) => {
+    if (err) {
+      return callback(err)
+    }
+
+    callback(null, isMatch);
+  })
+}
+
+const UserModel = mongoose.model('User', UserSchema);
+
+module.exports = UserModel;
