@@ -1,5 +1,5 @@
 import angular from 'angular';
-import authModule from '../authentication';
+import authModule from '../../services/authentication/authentication.js';
 
 angular.module('navbarCtrl', ['authModule'])
 .controller('navbarController', ($scope, $http, authService) => {
