@@ -9,7 +9,7 @@ const Contact = require('./contact');
 const User = require('./user');
 
 if (config.use_env_variable) {
-  var mongoose = mongoose.connect(config.use_env_variable, {useMongoClient: true});
+  var mongoose = mongoose.connect(config.use_env_variable);
 }
 
 const db = {
