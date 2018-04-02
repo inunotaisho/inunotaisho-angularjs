@@ -22,7 +22,10 @@
                         <h2 class="panel-title">Contact Me</h2>
                     </div>
                     <div class="panel-body">
-                        <form method="POST" action="/contact" id="inputform" ng-submit="submit()" >
+                        <form id="inputform" name="cf" ng-controller="contactCtrl as cfCtrl" ng-submit="formData(cf.$valid)" >
+                            <div class="alert {{alert}}" ng-show="showAlert" ng-animate="{show: 'alert-show', hide: 'alert-hide'}">
+                                <p>Message was succesfully sent</p>
+                            </div>
                             <div class="form-group">
                                 <input type="text" name="_gotcha" style="display: none">
                             <!--<label>Contact</label>
@@ -38,7 +41,7 @@
                                 <label>Message</label>
                                 <textarea class="form-control" name="message" rows="6" required></textarea>
                                 <div class="btnpadding">
-                                    <button class="btn btn-default" type="submit" >Submit</button>
+                                    <button class="btn btn-default" type="submit" ng-click="showAlert = !showAlert" >Submit</button>
                                 </div>
                             </div>
                         </form>
