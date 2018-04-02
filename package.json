@@ -56,8 +56,8 @@
     "less": "mkdirp public/dist && lessc ./src/styles/main.less > ./public/dist/app.css --clean-css=\"--s0 --advanced\"",
     "dev": "NODE_ENV=development nodemon ./lib/app.js",
     "migrate": "sequelize db:migrate",
-    "start": "concurrently -r \"npm run clean\" \"npm run bundle\" && nodemon ./lib/app.js",
-    "pack": "webpack --config webpack.config.dev.js"
+    "start": "concurrently -r \"npm run clean\" \"npm run bundle\" \"nodemon ./lib/app.js\"",
+    "pack": "webpack --config webpack.config.dev.js --watch"
   },
   "repository": {
     "type": "git",
