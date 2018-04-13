@@ -1,41 +1,27 @@
 const mongoose = require("mongoose"),
-       bcrypt = require('bcrypt');
+       crypto=require('crypto');
 
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    username: String,
-    password: String,
-    email:String,
-    firstName:String,
-    lastName:String
+    Username: String,
+    Email:String,
+    FirstName:String,
+    LastName:String,
+    Salt: {type: String, required: true },
+    Hash: {type: String, required: true }
 });
 
-UserSchema.pre('save', function (next) {
-  const user = this;
-  bcrypt.genSalt(8, function (err, salt) {
-    if (err) {
-      return next();
-    }
+UserSchema.methods.setPassword = function(password) {
+  this.Salt = crypto.randomBytes(16).toString("hex");
+  this.Hash = crypto.pbkdf2Sync(password, this.Salt, 10000, 512,'sha512').toString('hex');
+}
 
-    bcrypt.hash(user.password, salt, function(err, hash) {
-      if (err) {
-        return next(err);
-      }
-      user.password = hash;
-      next();
-    })
-  })
-});
 
-UserSchema.methods.comparePassword = function (password, callback) {
-  bcrypt.compare(password, this.password, (err, isMatch) => {
-    if (err) {
-      return callback(err)
-    }
 
-    callback(null, isMatch);
-  })
+UserSchema.methods.comparePassword = function (password) {
+  const hash = crypto.pbkdf2Sync(password, this.Salt, 10000, 512,'sha512').toString('hex')
+  return this.Hash === hash;
 }
 
 const UserModel = mongoose.model('User', UserSchema);
